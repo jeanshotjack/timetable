@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+    
+
+    <title>Timesheet</title>
+</head>
+<body>
+        
+    <div class="jumbotron jumbotron-fluid mb-4 ml-4 mr-4" style="background-color: black">
+        <div class="container">
+            <h1 class="display-6 text-center text-white">
+                Employee Data Management</h1>
+            <h2 class="display-8 text-center text-white">A Comprehensive Directory of Employee Billable Hours</h2>
+        </div>
+    </div>
+    <div class="card m-4">
+            <div class="card-header">
+                <i class="fas fa-table"></i> Current Employees
+            </div>
+            
+            <div id="result" class="card-body text-secondary pt-0 pb-0">
+                <p class="card-text">
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Months worked</th>
+                                    <th scope="col">Monthly Rate ($)</th>
+                                    <th scope="col">Total Billed ($)</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="newNew">
+                                 
+                                </tbody>
+                               </table>
+                </p>
+            </div>
+        </div>
+    <div class="card m-4">
+        <div class="card-header">
+            <i class="fas fa-newspaper"></i>
+            Add Employee
+        </div>
+        <div class="card-body text-secondary pt-0 pb-0">
+            <p class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Employee Name</label>
+                        <input id="name"  class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Role</label>
+                        <input id="role" class="form-control" id="exampleInputPassword1" placeholder="CEO">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Start Date</label>
+                        <input id="date" type="date" class="form-control text-secondary" id="exampleInputPassword1" placeholder="01/08/1989">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Monthly Rate</label>
+                        <input id="rate" class="form-control" id="exampleInputPassword1" placeholder="200000">
+                    </div>
+
+                    <span>
+                        <button id="add-emp" type="button" class="btn float-right text-white mb-4" style="background-color: #007BFF">
+                         Submit
+                        </button>
+                </form>
+            </p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
